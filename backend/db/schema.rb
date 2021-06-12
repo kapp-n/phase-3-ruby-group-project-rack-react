@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_135621) do
     t.text "summary"
     t.integer "pages"
     t.integer "shelf_id"
-    t.string "image"
+    t.text "image"
   end
 
   create_table "shelves", force: :cascade do |t|

@@ -8,10 +8,9 @@ class Application
       return [200, { 'Content-Type' => 'application/json' }, [ {:message => "test response!"}.to_json ]]
 
     elsif req.path.match(/shelves/)
-      shelves = Shelf.all 
-      return [200, {'Content-Type' => 'application/json'}, [ shelves.all.json ]]
-    
-
+      shelves = Shelf.all
+      return [200, {'Content-Type' => 'application/json'}, [ shelves.to_json({:include => :books}) ] ]
+  
 
     else
       resp.write "Path Not Found"
